@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -10,7 +9,7 @@ import plotly.express as px
 
 # Page config - MUST be first Streamlit command
 st.set_page_config(
-    page_title="Business Prediction System",
+    page_title="PakBiz",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -86,7 +85,7 @@ st.markdown("""
 <div style="text-align: center; padding: 1rem;">
     <h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-        Business Prediction System
+        PakBiz
     </h1>
     <p style="color: #666;">Probabilistic forecasting for SME decision support</p>
 </div>
@@ -246,7 +245,7 @@ with col3:
 
 with col4:
     inventory = int(latest['inventory_units'])
-    inv_color = "#28a745" if 800 < inventory < 1500 else "#ffc107" if inventory < 2000 else "#dc3545"
+    inv_color = "#28a745" if 800 < inventory < 1500 else "#cb9d14" if inventory < 2000 else "#b91828"
     st.markdown(f"""
     <div style="background: white; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
         <p style="color: #666; margin:0;">Inventory</p>
@@ -268,8 +267,8 @@ with col1:
         y=df['revenue_pkr'].tail(26),
         mode='lines+markers',
         name='Revenue',
-        line=dict(color='#667eea', width=3),
-        marker=dict(size=8, color='#764ba2')
+        line=dict(color="#1136da", width=3),
+        marker=dict(size=8, color="#410979")
     ))
     fig.update_layout(
         title="Revenue Trend (Last 26 Weeks)",
@@ -288,8 +287,8 @@ with col2:
         y=df['units_sold'].tail(26),
         mode='lines+markers',
         name='Units Sold',
-        line=dict(color='#11998e', width=3),
-        marker=dict(size=8, color='#38ef7d')
+        line=dict(color="#024a44", width=3),
+        marker=dict(size=8, color="#055825")
     ))
     fig.update_layout(
         title="Units Sold Trend (Last 26 Weeks)",
@@ -369,7 +368,8 @@ st.markdown("---")
 st.markdown("""
 <div style="text-align: center; padding: 1rem;">
     <p style="color: #666; font-size: 0.8rem;">
-         Business Prediction System | Powered by Prophet & Gemini AI
+         PAKBIZ | Powered by Prophet & Gemini AI
     </p>
 </div>
 """, unsafe_allow_html=True)
+
